@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+}
+
+<h2>Admin</h2>
+    <table class="table User">
+        <tr>
+            <th>Username</th>
+            <th>Status</th>
+            <th>Status Ban</th>
+        </tr>   
+                    <form action="" method="post">
+                        @foreach (var col in Model)
+                        {
+                            <tr>
+                                <td>@col.EmailID</td>
+                                <td>@col.Status</td>
+                                <td>
+                                    <select id="Status" name="Status"> 
+                                        <option  value="0">-------</option>
+                                        <option value="Active">Active</option>
+                                        <option value="Ban">Ban</option>
+                                    </select>
+                                    <input id="Button1" type="submit" value="Done" onclick="location.href='@Url.Action("Ban", "Admin")'" />
+                                </td>
+                                
+                            </tr>
+                        }
+                    </form>                
+</table>
+<input id="kuy1" type="submit" value="News" onclick="location.href='@Url.Action("Newssssss", "Newssssss")'"/>
+

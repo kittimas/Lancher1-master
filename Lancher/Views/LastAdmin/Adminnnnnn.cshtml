@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Adminnnnnn";
+    Layout = null;
+}
+<style>
+    #Kuy1 
+    {
+        margin-left:50%;
+    }
+</style>
+@using (Html.BeginForm("Ban", "LastAdmin", FormMethod.Post))
+{
+    <h2>Adminnnnnn</h2>
+        <table class="table User">
+            <tr>
+                <th>Username</th>
+                <th>Status</th>
+                <th>Status Ban</th>
+            </tr>
+            
+                @foreach (var col in Model)
+                {
+                    <tr>
+                        <td>@col.EmailID</td>
+                        <td>@col.StatusS </td>
+                        <td>
+                            <form action="/LastAdmin/Ban" method="post">
+                                <input type="hidden" name="111" value="@col.EmailID" />
+                                <select id="Status" name="Statuss">
+                                    <option value="0">-------</option>
+                                    <option value="Active">Active</option>
+                                    <option value="Ban">Ban</option>
+                                </select>
+                                <button type="submit">Save</button>
+                            </form>
+                        </td>
+
+                    </tr>
+
+                }
+           
+        </table>
+        <input id="Kuy1" type="button" value="News" onclick="location.href='@Url.Action("News", "LastAdmin")'" />
+}
+
+
+
+
